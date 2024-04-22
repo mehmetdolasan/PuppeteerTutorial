@@ -18,7 +18,7 @@ async function enterFormData(url, searchQuery){
 
         await page.screenshot({path:    'query-results.png'});
 
-        browser.close();
+        await browser.close();
 
         console.log("Form Data Submitted Successfully");
 
