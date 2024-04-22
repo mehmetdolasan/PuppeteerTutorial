@@ -15,7 +15,7 @@ async function run(){
     const metaKeywords = await page.$eval('meta[name="keywords"]', (element) => element.textContent);
 
     //Extract Links
-    const links = await page.$eval("a",(elements) => 
+    const links = await page.$$eval("a",(elements) => 
         elements.map((element) => ({
             src: element.href,
             text: element.textContent
@@ -24,7 +24,7 @@ async function run(){
 
     //Extract Images 
 
-    const images = await page.$eval("img", (elements) => 
+    const images = await page.$$eval("img", (elements) => 
 
         elements.map((element) => ({
             src: element.src,
